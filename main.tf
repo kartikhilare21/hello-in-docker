@@ -1,10 +1,6 @@
-# provider.tf
-variable "aws_region" {}
-
-# modules/vpc/vpc.tf
-variable "cidr_block" {}
-
-# subnets
-variable "public_subnet1" {}
-variable "public_subnet2" {}
-variable "public_subnet3" {}
+module "vpc" {
+  source         = "./modules/VPC"
+  cidr_block     = var.cidr_block
+  public_subnet1 = var.public_subnet1
+  public_subnet2 = var.public_subnet2
+  public_subnet3 = var.public_subnet3
