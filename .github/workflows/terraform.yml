@@ -29,5 +29,5 @@ jobs:
          terraform init
          terraform validate
          terraform workspace select  ${{ github.event.inputs.environment }} || terraform workspace new  ${{ github.event.inputs.environment }}
-         terraform plan --var-file="variables\${{ github.event.inputs.environment }}.tfvars" 
-         terraform apply -auto-approve --var-file="variables\${{ github.event.inputs.environment }}.tfvars"
+         terraform plan --var-file="variables/${{ github.event.inputs.environment }}.tfvars" 
+         terraform apply -auto-approve --var-file="variables/${{ github.event.inputs.environment }}.tfvars"
