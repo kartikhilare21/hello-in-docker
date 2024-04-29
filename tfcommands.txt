@@ -1,0 +1,6 @@
+ terraform plan --var-file="variables\prod.tfvars"  -target="module.ec2.aws_eip_association.aws_eip_association" -target="module.ec2.aws_instance.ec2_instance" -target="module.ec2.aws_volume_attachment.ebs_attachment"
+#terraform plan for specific resource
+terraform plan -target="module.ec2" --var-file="variables\prod.tfvars"
+
+#// terraform apply for specific
+terraform apply -target="module.ec2" --var-file="variables\prod.tfvars"
